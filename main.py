@@ -56,5 +56,9 @@ def predict_email(text):
     return "Spam" if prediction[0] == 1 else "Not Spam"
 
 # Try examples
-print(predict_email("You won a lottery prize! Claim now"))
-print(predict_email("Hey, are we meeting today?"))
+# print(predict_email("You won a lottery prize! Claim now"))
+# print(predict_email("Hey, are we meeting today?"))
+import pickle
+
+pickle.dump(model, open("model.pkl", "wb"))
+pickle.dump(tfidf, open("vectorizer.pkl", "wb"))
